@@ -97,6 +97,7 @@ GEM
     irb (1.8.1)
       rdoc
       reline (>= 0.3.8)
+    jwt (2.7.1)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -195,6 +196,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  jwt
   pg (~> 1.1)
   pry
   pry-byebug
