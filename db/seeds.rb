@@ -11,17 +11,17 @@ ingles_basico = Course.find_by(slug: 'ingles-basico')
 ingles_intermediario = Course.find_by(slug: 'ingles-intermediario')
 
 [
-  { name: 'Julia Torvalds', email: 'juliatorvalds@hulu.com', password_digest: 'senha@123' },
-  { name: 'John Mayer', email: 'mayer@hulu.com', password_digest: 'senha@456' }
+  { name: 'Julia Torvalds', email: 'juliatorvalds@hulu.com', password: 'senha@123' },
+  { name: 'John Mayer', email: 'mayer@hulu.com', password: 'senha@456' }
 ].each do |student|
-  Student.create!(name: student[:name], email: student[:email], password_digest: student[:password_digest])
+  Student.create!(name: student[:name], email: student[:email], password: student[:password])
 end
 
 [
-  { name: 'Sr. Smith Sanchez', email: 'smithsanchez@hulu.com', password_digest: '123@mudar' },
-  { name: 'Sra. McDonald', email: 'mcdonald@hulu.com', password_digest: '456@mudar' }
+  { name: 'Sr. Smith Sanchez', email: 'smithsanchez@hulu.com', password: '123@mudar' },
+  { name: 'Sra. McDonald', email: 'mcdonald@hulu.com', password: '456@mudar' }
 ].each do |instructor|
-  Instructor.create!(name: instructor[:name], email: instructor[:email], password_digest: instructor[:password_digest])
+  Instructor.create!(name: instructor[:name], email: instructor[:email], password: instructor[:password])
 end
 
 [
