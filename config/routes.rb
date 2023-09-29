@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # API V1
   namespace :api do
     namespace :v1 do
-      resources :students, :courses
+      resources :students, :courses, :instructors
 
       # student sessions
       post 'student_sessions/login', to: 'student_sessions#create'

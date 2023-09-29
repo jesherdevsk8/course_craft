@@ -3,6 +3,8 @@
 module Api
   module V1
     class InstructorSessionsController < ApplicationController
+      before_action :authorize, except: :create
+
       def create
         @instructor = Instructor.find_by(email: instructor_params[:email])
 

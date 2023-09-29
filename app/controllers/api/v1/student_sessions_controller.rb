@@ -3,6 +3,8 @@
 module Api
   module V1
     class StudentSessionsController < ApplicationController
+      before_action :authorize, except: :create
+
       def create
         @student = Student.find_by(email: student_params[:email])
 

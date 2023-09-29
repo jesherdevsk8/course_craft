@@ -7,9 +7,22 @@ module Api
 
       # GET /students
       def index
-        @students = Student.all.order(id: :desc)
+        page = params[:page] || 1
+        per_page = params[:per_page] || 10
 
-        render json: @students
+        start_index = (page.to_i - 1) * per_page.to_i
+
+        student_courses = @result.enrollments.offset(start_index).limit(per_page).map(&:course)
+
+        result = {
+          page: page.to_i,
+          per_page: per_page.to_i,
+          total_count: student_courses.size,
+          course_data: Course.students_names(student_courses),
+          total_students: student_courses.map(&:students).flatten.count
+        }
+
+        render json: result, head: :ok
       end
 
       # GET /students/1
@@ -22,7 +35,7 @@ module Api
         @student = Student.new(student_params)
 
         if @student.save!
-          head :created
+          render json: @student.id, head: :created
         else
           render json: @student.errors, status: :unprocessable_entity
         end
@@ -54,7 +67,7 @@ module Api
         params.require(:student).permit(
           :name,
           :email,
-          :password
+          :password_digest
         )
       end
     end

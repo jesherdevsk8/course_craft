@@ -21,8 +21,6 @@ module Api
           total_count: Course.count,
           courses: courses
         }, head: :ok
-
-        # render json: courses.last.enrollments.map(&:enrollable)
       end
 
       # # GET /tasks

@@ -49,12 +49,8 @@ Enrollment.create(enrollable: TeachingLevel.first, course: ingles_basico)
 
 # matriculas ingles intermediario
 Enrollment.create(enrollable: Instructor.second, course: ingles_intermediario)
-Enrollment.create(enrollable: Student.second, course: ingles_intermediario)
-Enrollment.create(enrollable: Semester.second, course: ingles_intermediario)
-Enrollment.create(enrollable: TeachingLevel.second, course: ingles_intermediario)
-
-Enrollment.create(enrollable: Instructor.second, course: ingles_intermediario)
 Enrollment.create(enrollable: Student.first, course: ingles_intermediario)
+Enrollment.create(enrollable: Student.second, course: ingles_intermediario)
 Enrollment.create(enrollable: Semester.second, course: ingles_intermediario)
 Enrollment.create(enrollable: TeachingLevel.second, course: ingles_intermediario)
 
